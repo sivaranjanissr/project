@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html><head>
+<script src="angular.min.js"></script>
+<script>
+    var res1 = angular.module("res", []);
+
+    res1.controller('resumes', function ($scope, $http) {
+        $scope.submit = function () {
+            alert("Message Sent")
+            $http({
+                'url': '/cheps',
+                'method': 'POST',
+                'data': {
+                    name: $scope.name,
+                    salary: $scope.salary,
+                    phno: $scope.phno,
+                    mail: $scope.mail
+                }
+
+            }).then(function (err, data) {
+                console.log(data)
+            })
+        }
+    });
+
+</script>
+
+    <title>RESUME</title></head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<style>
+    body,
+    html {
+        height: 100%
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Times New Roman", sans-serif
+    }
+
+    .menu {
+        display: none
+    }
+
+    .bgimg {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("pics.PNG");
+        min-height: 90%;
+    }
+
+    .w3-containers {
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 20%;
+        background-image: url("/2.PNG");
+    }
+</style>
+
+<body ng-app="res">
+
+    
+    <div class="w3-top w3-hide-small">
+        <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+            <a href="#" class="w3-bar-item w3-button">HOME</a>
+            <a href="#menu" class="w3-bar-item w3-button">SKILLS</a>
+            <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+            <a href="#googleMap" class="w3-bar-item w3-button">CONTACT</a>
+        </div>
+    </div>
+
+    
+    <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+        <div class="w3-display-bottomleft w3-padding">
+            <span class="w3-tag w3-xlarge">A graduate in Engineering</span>
+        </div>
+        <div class="w3-display-middle w3-center">
+            <span class="w3-text-white w3-hide-small" style="font-size:60px">RESUME
+                <br>SIVARANJANI</span>
+            <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px">
+                <b>thin
+                    <br>SIVARANJANI</b>
+            </span>
+            <p>
+                <a href="#menu" class="w3-button w3-xxlarge w3-black">GO AHEAD TO EXPLORE</a>
+            </p>
+        </div>
+    </header>
+
+    
+    <div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+        <div class="w3-content">
+
+            <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">SKILLS</h1>
+            <div class="w3-row w3-center w3-border w3-border-dark-grey">
+                <a href="javascript:void(0)" onclick="openMenu(event, 'Technical');" id="myLink">
+                    <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Technical</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openMenu(event, 'Project');">
+                    <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Academics</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openMenu(event, 'Workshop');">
+                    <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Extracurricular</div>
+                </a>
+
+            </div>
+
+            <div id="Technical" class="w3-container menu w3-padding-32 w3-white">
+                <a href="javascript:void(0)" onclick="openMenu(event, 'Programming');" id="programming">
+                    <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Programming</div>
+                </a>
+
+                <a href="javascript:void(0)" onclick="openMenu(event, 'webtechnologies');" id="web">
+                    <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Web Technolgies</div>
+                </a>
+
+                <a href="javascript:void(0)" onclick="openMenu(event, 'Databasemanagement');" id="db">
+                    <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Database</div>
+                </a>
+            </div>
+
+
+            <div id="Project" class="w3-container menu w3-padding-32 w3-white">
+                <a href="javascript:void(0)" onclick="openMenu(event, 'dones');" id="don">
+                    <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Projects done</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openMenu(event, 'ongoing');" id="ongng">
+                    <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Ongoing project</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openMenu(event, 'achieve');" id="ac">
+                    <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Achievements</div>
+                </a>
+
+            </div>
+
+
+            <div id="Workshop" class="w3-container menu w3-padding-32 w3-white">
+                <a href="javascript:void(0)" onclick="openMenu(event, 'works');" id="work">
+                    <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Workshop</div>
+                </a>
+
+                <a href="javascript:void(0)" onclick="openMenu(event, 'inplant');" id="plant">
+                    <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Inplant training</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openMenu(event, 'keycourses');" id="key">
+                    <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Key Courses</div>
+                </a>
+            </div>
+            <div id="Programming" class="w3-container menu w3-padding-32 w3-white">
+                <ul class="w3-text-grey">
+                    <li>C</li>
+                    <li>C++</li>
+                    <li>Java</li>
+                </ul>
+                <hr>
+            </div>
+            <div id="webtechnologies" class="w3-container menu w3-padding-32 w3-white">
+                <ul class="w3-text-grey">
+                    <li>HTML</li>
+                    <li>Javascript</li>
+                    <li>Angularjs</li>
+                    <li>CSS</li>
+                </ul>
+                <hr>
+            </div>
+            <div id="Databasemanagement" class="w3-container menu w3-padding-32 w3-white">
+                <ul class="w3-text-grey">
+                    <li>Mongo DB</li>
+                    <li>mySQL</li>
+                </ul>
+                <hr>
+            </div>
+            <div id="dones" class="w3-container menu w3-padding-32 w3-white">
+                <ul class="w3-text-grey">
+                    <li>Heart Disease Prediction Using Data Mining Algorithm</li>
+                    <li>Smart Vehicle Parking System</li>
+                </ul>
+                </p>
+                <hr>
+            </div>
+            <div id="ongoing" class="w3-container menu w3-padding-32 w3-white">
+                <p class="w3-text-grey">Resume Development</p>
+                <hr>
+            </div>
+            <div id="achieve" class="w3-container menu w3-padding-32 w3-white">
+                <ul class="w3-text-grey">
+                    <li>Published a Journal paper on Heart Disease Prediction using Data Mining Algorithm in Narasu's Sarathy
+                        Institute of Technology,Salem.
+                    </li>
+                    <li>Participated in an Event IOT challenge 2016 conducted by I3indya Technologies,IIT Bombay at Sri Ramakrishna
+                        Engineering College on 2 September 2016 and 3 September 2016
+                    </li>
+                </ul>
+                <hr>
+            </div>
+            <div id="works" class="w3-container menu w3-padding-32 w3-white">
+                <ul class="w3-text-grey">
+                    <li>Attended 3 days workshop on Big Data Analytics on Kumaraguru College of Technology</li>
+                    <li>Attended a Hands On session on Python in Sri Ramakrishna Engineering College</li>
+                    <li>Attended 3 days workshop on IOT in Sri Ramakrishna Engineering College</li>
+                </ul>
+                <hr>
+            </div>
+            <div id="inplant" class="w3-container menu w3-padding-32 w3-white">
+                <p class="w3-text-grey">Done Inplant training in KG Information System Private Ltd</p>
+                <hr>
+            </div>
+            <div id="keycourses" class="w3-container menu w3-padding-32 w3-white">
+                <ul class="w3-text-grey">
+                    <li>NPTEL-Data Mining</li>
+                    <li>Solo learn-Database Management System</li>
+                </ul>
+                <hr>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="w3-containers w3-padding-64 w3-red w3-red w3-xlarge" id="about">
+        <div class="w3-content">
+            <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">About</h1>
+            <img src="/ssr.jpg" style="width:150px" class="w3-square w3-right" alt="ssr">
+            <h1>
+                <b>Name:</b>
+                <span class="w3-center w3-padding-23 w3-red w3-red w3-xlarge">SIVARANJANI.S</span>
+            </h1>
+            <h1>
+                <b>Department:</b>
+                <span class="w3-center w3-padding-23 w3-red w3-red w3-xlarge">COMPUTER SCIENCE AND ENGINEERING</span>
+            </h1>
+            <h1>
+                <b>Father's Name:</b>
+                <span class="w3-center w3-padding-23 w3-red w3-red w3-xlarge">SELVARAJ.K</span>
+            </h1>
+            <h1>
+                <b>Date Of Birth:</b>
+                <span class="w3-center w3-padding-23 w3-red w3-red w3-xlarge">02.02.1998</span>
+            </h1>
+            <h1>
+                <b>Languages Known:</b>
+                <span class="w3-center w3-padding-23 w3-red w3-red w3-xlarge">English,Tamil</span>
+            </h1>
+            <h1>
+                <b>Phone:</b>
+                <span class="w3-center w3-padding-23 w3-red w3-red w3-xlarge">76399813332</span>
+            </h1>
+            <h1>
+                <b>Residence:</b>
+                <span class="w3-center w3-padding-23 w3-red w3-red w3-xlarge">
+                    <address>2/908 Kuamran 3rd street,Sr nagar North,Andipalayam post,Tiruppur.</address>
+                </span>
+            </h1>
+            <h1>
+                <b>Official Mail:</b>
+                <span class="w3-center w3-padding-23 w3-red w3-red w3-xlarge">sivaranjani.1501227@srec.ac.in</span>
+            </h1>
+            <h1>
+                <b>Personal Mail:</b>
+                <span class="w3-center w3-padding-23 w3-red w3-red w3-xlarge">sivaranjaniselvaraj123@gmail.com</span>
+            </h1>
+            <h1>
+                <b>Linked in:</b>
+                <span class="w3-center w3-padding-23 w3-red w3-red w3-xlarge">sivaranjani-s-</span>
+            </h1>
+
+            <h1>
+                <b>Eduaction Qualification:</b>
+            </h1>
+            <style>
+                table,
+                td,
+                th {
+                    border: 1px solid yellowgreen
+                }
+            </style>
+            <table style="width:100%">
+                <tr>
+                    <th>Year</th>
+                    <th>Degree</th>
+                    <th>Institution</th>
+                    <th>Percentage obtained</th>
+                </tr>
+                <tr>
+                    <td>2015</td>
+                    <td>B.E</td>
+                    <td>Sri Ramakrishna Engineering College</td>
+                    <td>7.83</td>
+                </tr>
+                <tr>
+                    <td>2015</td>
+                    <td>HSC</td>
+                    <td>Erode Hindu Kalvi Nilayam</td>
+                    <td>94.91</td>
+                </tr>
+                <tr>
+                    <td>2013</td>
+                    <td>SSLC</td>
+                    <td>Erode Hindu Kalvi Nilayam</td>
+                    <td>98.4</td>
+                </tr>
+            </table>
+
+
+            <p>
+                <b>Strength:</b>
+            </p>
+            <ul>
+                <li>Teamwork skills</li>
+                <li>Leadership Qualities</li>
+                <li>Problem solving</li>
+            </ul>
+            <p>
+                <b>Hobbies:</b>
+            </p>
+            <ul>
+                <li>Listening to music</li>
+                <li>Drawing</li>
+            </ul>
+            <p>
+                <b>Area of Interest:</b>
+            </p>
+            <ul>
+                <li>Web Development</li>
+                <li>Database Management System</li>
+                <li>Data Mining</li>
+            </ul>
+
+            <p>
+                <b>Position of Responsibility:</b>
+            </p>
+            <ul>
+                <li>Class Commitee Member</li>
+                <li>Quiz organizer in Sri Ramakrishna Engineering College in Symposium 2016</li>
+            </ul>
+
+
+
+
+        </div>
+    </div>
+
+    
+    
+
+    <div class="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge">
+        <div class="w3-content">
+            <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Contact</h1>
+            <div id="googleMap" class="w3-center w3-grayscale-max" style="width:100%;height:600px;">
+                <p>Find me at Tiruppur or call me at 7639813332</p>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3915.1793546764634!2d77.32133194907452!3d11.100006992063681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s2%2F908A+SR+Nagar+North%2CAndipalayam+post%2CTiruppur!5e0!3m2!1sen!2sin!4v1528965251245" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+           
+                       <p>
+                <span class="w3-tag">Declaration</span> I assure that I will offer my best to the wellness of the company,If I am given the job
+                .I also assure that the above mentioned information are correct and are in accoradance with previous institution.</p>
+            <p class="w3-xxlarge">
+                <strong>Enter</strong> the deatils of the company:</p>
+        
+                <div  ng-controller="resumes">
+                    <p>
+                        <input type="text" class="w3-input w3-padding-16 w3-border"  ng-model="name"  placeholder="Name of the company" >
+                    </p>
+                    <p>
+                        <input type="number" class="w3-input w3-padding-16 w3-border" ng-model="salary" placeholder="Salary" >
+                    </p>
+                    <p>
+                        <input type="number" class="w3-input w3-padding-16 w3-border" ng-model="phno" placeholder="Phone Number" 
+                         >
+                    </p>
+                    <p>
+                        <input type="mail" class="w3-input w3-padding-16 w3-border" ng-model="mail" placeholder="Mail id" >
+                    </p>
+                    <p>
+                        <button class="w3-button w3-light-grey w3-block" ng-click="submit()">SEND MESSAGE</button>
+                    </p>
+                </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+    <footer class="w3-center w3-black w3-padding-48 w3-xxlarge">
+        <p><strong>Thankyou</strong> for your response 
+                    </p>
+    </footer>
+    <script>
+        function openMenu(evt, menuName) {
+                   var i, x, tablinks;
+                   x = document.getElementsByClassName("menu");
+                   for (i = 0; i < x.length; i++) {
+                       x[i].style.display = "none";
+                   }
+                   tablinks = document.getElementsByClassName("tablink");
+                   for (i = 0; i < x.length; i++) {
+                       tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+                   }
+                   document.getElementById(menuName).style.display = "block";
+                   evt.currentTarget.firstElementChild.className += " w3-red";
+               }
+           document.getElementById("myLink").click();
+   
+   </script>
+   
+   
+
+</body>
+
+</html>
